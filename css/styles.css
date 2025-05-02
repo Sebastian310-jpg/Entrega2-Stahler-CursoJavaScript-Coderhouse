@@ -1,0 +1,112 @@
+:root {
+    --color-fondo: #f4f4f4;
+    --color-texto: #333;
+    --color-boton: #007BFF;
+    --color-boton-hover: #0056b3;
+
+    /* Tarjeta */
+    --color-borde-tarjeta: #ccc;
+    --color-sombra-tarjeta: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+/* --------------- SUPERMERCADO SECCIÓN -------------- */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+#titulo-principal {
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+#titulo-bienvenida {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.5em;
+}
+
+#contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tarjeta-producto {
+    border: 1px solid var(--color-borde-tarjeta);
+    color: var(--color-texto);
+    border-radius: 8px;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 8px var(--color-sombra-tarjeta);
+}
+
+.tarjeta-producto input {
+    width: 70px;
+    height: 20px;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid var(--color-borde-tarjeta);
+    border-radius: 5px;
+}
+
+.tarjeta-producto button {
+    background-color: var(--color-boton);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all .3s ease;
+}
+
+.tarjeta-producto button:hover {
+    background-color: var(--color-boton-hover);
+}
+
+/* --------------- CARRITO SECCIÓN -------------- */
+#contenedor-carrito {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+#carrito-contenido {
+    border: 1px solid var(--color-borde-tarjeta);
+    box-shadow: 0 4px 8px var(--color-sombra-tarjeta);
+    border-radius: 8px;
+    width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+#contenedor-carrito .btn-carrito {
+    background-color: var(--color-boton);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 350px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#contenedor-carrito .btn-carrito:hover {
+    background-color: var(--color-boton-hover);
+}
+
+.total {
+    margin: 10px;
+    text-transform: uppercase;
+}
