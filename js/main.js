@@ -156,7 +156,6 @@ if (carritoGuardado) {
 mostrarLista();
 
 /* ----------------- AGREGAR PRODUCTOS AL CARRITO ---------------------- */
-
 const actualizarBotones = () => {
     const botonesAgregar = document.querySelectorAll(".btn-agregar");
     const inputsCantidad = document.querySelectorAll(".inputs-cantidad");
@@ -231,13 +230,18 @@ btnVaciarCarrito.addEventListener("click", () => {
 
 /* ----------------- COMPRAR EL CARRITO ---------------------- */
 const btnComprarCarrito = document.getElementById("btn-comprar");
+
 btnComprarCarrito.addEventListener("click", () => {
-    carrito.length = 0;
-
-    localStorage.removeItem("carrito");
-
-    refrescarTienda();
-    agregarAlCarrito();
+    if (carrito.length === 0) {
+        carritoContenido.innerHTML = `<p>Agrega productos antes de comprar.</p>`;
+    } else {
+        carrito.length = 0;
     
-    carritoContenido.innerHTML = "<p>Gracias por tu Compra!</p>";
+        localStorage.removeItem("carrito");
+    
+        refrescarTienda();
+        agregarAlCarrito();
+        
+        carritoContenido.innerHTML = `<p>Gracias por tu Compra!</p>`;
+    }
 });
